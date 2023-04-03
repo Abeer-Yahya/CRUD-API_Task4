@@ -4,5 +4,6 @@ CREATE TABLE paintings (
 	title TEXT UNIQUE NOT NULL,
 	year INT NOT NULL,
 	artist TEXT NOT NULL,
-	url VARCHAR(8000) NOT NULL
+	url VARCHAR(8000) NOT NULL,
+	location VARCHAR(500)
 );
