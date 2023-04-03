@@ -1,4 +1,44 @@
+const bcrypt = require("bcrypt");
 const prisma = require("./prisma");
+const { createTokens } = require("../middleware/JWT");
+const registerUser = (req, res) => {
+  try {
+    const { username, password } = req.body;
+    bcrypt.hash(password, 10).then((hash) => {
+      prisma.users
+        .create({
+          data: {
+            username: username,
+            password: hash,
+          },
+        })
+        .then((results) => res.status(201).send("User created successfully"));
+    });
+  } catch (error) {
+    res.status(500).send(`Something went wrong: ${error.message}`);
+  }
+};
+const loginUser = async (req, res) => {
+  const { username, password } = req.body;
+  const user = await prisma.users.findUnique({
+    where: { username: username },
+  });
+
+  if (!user) res.status(400).send("User doesn't exist!");
+  const dbPassword = user.password;
+  bcrypt.compare(password, dbPassword).then((match) => {
+    if (!match) {
+      res.status(400).send("Wrong username and password combination");
+    } else {
+      const accessToken = createTokens(user);
+      res.cookie("access-token", accessToken, {
+        maxAge: 2592000000,
+        httpOnly: true,
+      });
+      res.status(201).send("Logged In");
+    }
+  });
+};
 
 const getPaintings = (req, res) => {
   try {
@@ -83,4 +123,6 @@ module.exports = {
   addPainting,
   removePainting,
   updatePainting,
+  registerUser,
+  loginUser,
 };

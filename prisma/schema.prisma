@@ -21,3 +21,9 @@ model patients {
   name    String @unique @db.VarChar(50)
   contact Int
 }
+
+model users {
+  user_id  Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(10)
+  password String @db.VarChar
+}

@@ -7,3 +7,11 @@ CREATE TABLE paintings (
 	url VARCHAR(8000) NOT NULL,
 	location VARCHAR(500)
 );
+
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	user_id SERIAL PRIMARY KEY,
+	username TEXT UNIQUE NOT NULL,
+	password TEXT NOT NULL
+);
