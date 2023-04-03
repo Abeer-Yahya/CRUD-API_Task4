@@ -34,6 +34,7 @@ const addPainting = (req, res) => {
           year: req.body.year,
           artist: req.body.artist,
           url: req.body.url,
+          location: req.body.location,
         },
       })
       .then((results) => res.status(201).send(results));
@@ -66,7 +67,7 @@ const updatePainting = (req, res) => {
     prisma.paintings
       .update({
         where: { id: parseInt(req.params.id) },
-        data: { url: req.body.url },
+        data: { location: req.body.location },
       })
       .then((results) =>
         res.status(201).send(`Painting modified with ID: ${req.params.id}`)

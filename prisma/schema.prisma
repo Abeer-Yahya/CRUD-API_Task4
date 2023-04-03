@@ -8,11 +8,12 @@ datasource db {
 }
 
 model paintings {
-  id     Int    @id @default(autoincrement())
-  title  String @unique
-  year   Int
-  artist String
-  url    String @db.VarChar(8000)
+  id       Int     @id @default(autoincrement())
+  title    String  @unique
+  year     Int
+  artist   String
+  url      String  @db.VarChar(8000)
+  location String? @db.VarChar(500)
 }
 
 model patients {
