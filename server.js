@@ -4,6 +4,9 @@ const app = express();
 require("dotenv").config();
 const logger = require("./src/middleware/logger");
 const ErrorHandler = require("./src/middleware/errorHandler");
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 app.use(logger);
 app.use(ErrorHandler);
 
