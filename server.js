@@ -1,12 +1,14 @@
 const express = require("express");
 const paintingRoutes = require("./src/painting/routes");
-const app = express();
 require("dotenv").config();
-const logger = require("./src/middleware/logger");
 const ErrorHandler = require("./src/middleware/errorHandler");
 const cookieParser = require("cookie-parser");
+const connectDB = require("./config/mongo");
+const logger = require("./src/middleware/logger");
+const { model } = require("mongoose");
+const app = express();
 app.use(cookieParser());
-
+connectDB();
 app.use(logger);
 app.use(ErrorHandler);
 
