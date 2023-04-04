@@ -7,13 +7,13 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:4000/api/v1/paintings/register",
+			"name": "Register",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Abeer\",\r\n    \"password\": \"test\"\r\n}",
+					"raw": "{\r\n    \"username\": \"AbeerH\",\r\n    \"password\": \"test1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,12 +21,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/register",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
@@ -38,13 +39,13 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings/login",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Abeer\",\r\n    \"password\": \"test\"\r\n}",
+					"raw": "{\r\n    \"username\": \"AbeerH\",\r\n    \"password\": \"test1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -52,12 +53,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/login",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
@@ -69,17 +71,18 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings",
+			"name": "All Paintings",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
@@ -90,17 +93,18 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings/1",
+			"name": "One Painting",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/1",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
@@ -112,13 +116,13 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings",
+			"name": "New Painting",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"testTitle\",\r\n    \"year\": 1999,\r\n    \"artist\":\"Abeer\",\r\n    \"url\":\"https://rb.gy/50kf\",\r\n    \"location\":\"Amman\"\r\n}",
+					"raw": "{\r\n    \"title\": \"test\",\r\n    \"year\": 2000,\r\n    \"artist\":\"Abeer\",\r\n    \"url\":\"https://rb.gy/50kh\",\r\n    \"location\":\"Milano\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,12 +130,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
@@ -142,7 +147,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings/7",
+			"name": "Update Painting",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -156,56 +161,59 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/7",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/8",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
 						"paintings",
-						"7"
+						"8"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings/7",
+			"name": "Delete Painting",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/7",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/8",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
 						"paintings",
-						"7"
+						"8"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/v1/paintings/mongo/logs",
+			"name": "Logs",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/v1/paintings/mongo/logs",
-					"protocol": "http",
+					"raw": "https://pwc-auth-api.onrender.com/api/v1/paintings/mongo/logs",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pwc-auth-api",
+						"onrender",
+						"com"
 					],
-					"port": "4000",
 					"path": [
 						"api",
 						"v1",
