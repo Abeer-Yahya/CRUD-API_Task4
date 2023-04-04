@@ -16,7 +16,7 @@ router.put("/:id", validateToken, controller.updatePainting);
 router.delete("/:id", validateToken, controller.removePainting);
 
 //Logs route
-router.get("/mongo/logs", async (req, res, next) => {
+router.get("/mongo/logs", validateToken, async (req, res, next) => {
   let { page = 1, size = 10 } = req.query;
 
   const limit = parseInt(size);
