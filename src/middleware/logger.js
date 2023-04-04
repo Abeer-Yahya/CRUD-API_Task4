@@ -1,10 +1,19 @@
+const Log = require("../../models/logs");
+
+const test = async (log) => {
+  const entry = await Log.create({
+    text: log,
+  });
+};
+
 const logger = (req, res, next) => {
   const method = req.method;
-  const EndPoint = req.originalUrl;
+  const url = req.url;
   const status = res.statusCode;
-  const IP = req.ip;
-  const log = ` ${method}: ${EndPoint} ${status} ${IP}`;
+  const ipAddress = req.socket.remoteAddress;
+  const log = `${method}:${url} ${status} ${ipAddress}`;
   console.log(log);
+  test(log);
   next();
 };
 
