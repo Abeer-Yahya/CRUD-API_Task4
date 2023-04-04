@@ -6,7 +6,7 @@ To **add new painting, update or remove an existing one**, you must **register**
 
 Also, there is a **logger** that records the user's IP and the endpoints accessed with their respective HTTP methods in **MongoDB**.
 
-[API Demo]()
+[API Demo](https://pwc-auth-api.onrender.com/)
 
 ## API EndPoints
 
